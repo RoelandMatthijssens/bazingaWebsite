@@ -1,0 +1,28 @@
+@import 'variables';
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: $footer-height;
+}
+
+.footer {
+  background-color: $primary-background-color;
+  height: $footer-height;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer-content {
+  p {
+    margin: 0;
+    display: inline-block;
+  }
+  line-height: 30px;
+  height: $footer-height;
+  color: $primary-foreground-color;
+}

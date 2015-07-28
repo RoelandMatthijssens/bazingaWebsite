@@ -1,3 +1,5 @@
 .idea/
 .sass-cache/
-html/assets/css/*
+*.css
+*.css.map
+!html/assets/css/*.css

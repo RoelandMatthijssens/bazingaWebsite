@@ -1,0 +1,5 @@
+@import 'variables';
+
+.text-muted {
+  color: darken($primary-foreground-color, 20%);
+}
