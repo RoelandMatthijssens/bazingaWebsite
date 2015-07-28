@@ -1,11 +1,13 @@
 @import 'variables';
 
-.navbar-default {
+.navbar {
   background-color: $primary-background-color;
   background-image: none;
+  min-height: $navbar-height;
+  border-radius: 0 0 $border-radius-navbar $border-radius-navbar;
 }
 
-.navbar-default .logo {
+.navbar .logo {
   img {
     float: left;
     border: 1px solid black;
@@ -23,11 +25,7 @@
   }
 }
 
-.navbar-default > div {
-  background-color: $primary-background-color;
-}
-
-.navbar-default .nav > li > a {
+.navbar .nav > li > a {
   color: $primary-foreground-color;
   &:hover {
     color: $primary-foreground-color;
@@ -36,5 +34,11 @@
   &:active {
     color: $primary-foreground-color;
     background-color: lighten($primary-background-color, 7%);
+  }
+}
+
+@media (max-width: 767px){
+  .navbar{
+    border-radius: 0 0 0 0;
   }
 }

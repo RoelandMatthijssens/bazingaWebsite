@@ -1,0 +1,8 @@
+@import 'variables';
+
+.content {
+  margin-top: -20px;
+  padding-top: 20px;
+  min-height: calc(100% - (#{$footer-height} + #{$navbar-height}) + 20px + 8px); //todo why +8px?
+  background-color: $primary-foreground-color;
+}

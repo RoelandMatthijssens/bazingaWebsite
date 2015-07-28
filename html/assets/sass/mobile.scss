@@ -1,0 +1,14 @@
+@media (max-width: 767px) {
+  .navbar {
+    border-radius: 0 0 0 0;
+  }
+  .footer{
+    border-radius: 0 0 0 0;
+  }
+}
+
+@media (min-width: 768px){
+  .content{
+    max-width: calc(100% - 2*50px);
+  }
+}
