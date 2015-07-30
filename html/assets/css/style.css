@@ -1,6 +1,26 @@
 .text-muted {
   color: #000000; }
 
+.nav > li.dropdown.active.open > a,
+.nav > li.dropdown.active.open > ul.dropdown-menu a:hover,
+.nav > li.dropdown.open > a,
+.nav > li.dropdown.open > ul.dropdown-menu a:hover {
+  background-color: #0a9245;
+  color: #fffff0; }
+
+.nav > li.dropdown > a,
+.nav > li.dropdown > ul.dropdown-menu a:hover,
+.dropdown-menu > li > a {
+  background-color: #087135;
+  color: #fffff0; }
+
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus {
+  background-image: none !important; }
+
+.dropdown-menu {
+  background-color: #087637; }
+
 .navbar {
   background-color: #087135;
   background-image: none;
