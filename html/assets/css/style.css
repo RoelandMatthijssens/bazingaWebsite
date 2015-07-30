@@ -39,6 +39,8 @@
   padding-top: 20px;
   min-height: calc(100% - (30px + 50px) + 20px + 8px);
   background-color: #fffff0; }
+  .content a {
+    color: #087135; }
 
 html {
   position: relative;

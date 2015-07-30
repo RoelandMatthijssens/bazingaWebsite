@@ -5,4 +5,7 @@
   padding-top: 20px;
   min-height: calc(100% - (#{$footer-height} + #{$navbar-height}) + 20px + 8px); //todo why +8px?
   background-color: $primary-foreground-color;
+  a{
+    color: $primary-background-color;
+  }
 }
