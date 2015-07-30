@@ -5,7 +5,15 @@
   padding-top: 20px;
   min-height: calc(100% - (#{$footer-height} + #{$navbar-height}) + 20px + 8px); //todo why +8px?
   background-color: $primary-foreground-color;
-  a{
+  a {
     color: $primary-background-color;
+  }
+  .contact-details {
+    height: 500px;
+    font-size: 17px;
+    .fa, .glyphicon {
+      width: 10px;
+      margin-right: 5px;
+    }
   }
 }

@@ -2,13 +2,18 @@
   .navbar {
     border-radius: 0 0 0 0;
   }
-  .footer{
+  .footer {
     border-radius: 0 0 0 0;
+  }
+  .contact-details {
+    p {
+      font-size: 12px;
+    }
   }
 }
 
-@media (min-width: 768px){
-  .content{
-    max-width: calc(100% - 2*50px);
+@media (min-width: 768px) {
+  .content {
+    max-width: calc(100% - 2 * 50px);
   }
 }

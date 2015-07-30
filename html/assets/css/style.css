@@ -41,6 +41,12 @@
   background-color: #fffff0; }
   .content a {
     color: #087135; }
+  .content .contact-details {
+    height: 500px;
+    font-size: 17px; }
+    .content .contact-details .fa, .content .contact-details .glyphicon {
+      width: 10px;
+      margin-right: 5px; }
 
 html {
   position: relative;
@@ -70,9 +76,12 @@ body {
     border-radius: 0 0 0 0; }
 
   .footer {
-    border-radius: 0 0 0 0; } }
+    border-radius: 0 0 0 0; }
+
+  .contact-details p {
+    font-size: 12px; } }
 @media (min-width: 768px) {
   .content {
-    max-width: calc(100% - 2*50px); } }
+    max-width: calc(100% - 2 * 50px); } }
 
 /*# sourceMappingURL=style.css.map */
