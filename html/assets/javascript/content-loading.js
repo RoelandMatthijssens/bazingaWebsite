@@ -47,17 +47,23 @@ window.ContentLoading = window.ContentLoading || {};
 		});
 	}
 
+	function setContentFromHash () {
+		var identifier = location.hash.length > 1 ? location.hash.substr (1) : 'home';
+		setContent (identifier);
+	}
 
 	function createReadystatechangeListener (prefetch) {
 		return function listener () {
 			if ( document.readyState !== 'interactive' ) { return; }
-			setContent ('home');
+			setContentFromHash ();
 		}
 	};
 
-	function navigationListener () {
+	function createNavigationListener () {
+		return setContentFromHash;
 	};
 
 	scope.createReadystatechangeListener = createReadystatechangeListener;
+	scope.createNavigationListener = createNavigationListener;
 	scope.setContent = setContent;
 }) (window.ContentLoading, document);

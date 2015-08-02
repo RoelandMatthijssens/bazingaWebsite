@@ -22,7 +22,7 @@
 			</button>
 		</div>
 		<div class="navbar-header">
-			<a class="navbar-brand logo" href="index.html">
+			<a class="navbar-brand logo" href="#home">
 				<img alt="Brand" src="assets/images/logo.jpg">
 				Bazinga!
 			</a>
@@ -30,22 +30,22 @@
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav navbar-right">
 				<li class="dropdown">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+					<a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
 						 aria-expanded="false">Aanbod <span class="caret"></span></a>
 					<ul class="dropdown-menu">
-						<li><a href="#" data-loadable="true" data-identifier="kinderspellen">Kinderspellen</a></li>
-						<li><a href="#" data-loadable="true" data-identifier="kinderspellen">Spellen voor 2</a></li>
-						<li><a href="#" data-loadable="true" data-identifier="kinderspellen">Familispellen</a></li>
-						<li><a href="#" data-loadable="true" data-identifier="kinderspellen">Expertspellen</a></li>
-						<li><a href="#" data-loadable="true" data-identifier="kinderspellen">Fantasy Games</a></li>
+						<li><a href="#kinderspellen">Kinderspellen</a></li>
+						<li><a href="#kinderspellen">Spellen voor 2</a></li>
+						<li><a href="#kinderspellen">Familispellen</a></li>
+						<li><a href="#kinderspellen">Expertspellen</a></li>
+						<li><a href="#kinderspellen">Fantasy Games</a></li>
 					</ul>
 				</li>
-				<li><a href="#" data-loadable="true" data-identifier="aanbiedingen">Aanbiedingen</a></li>
-				<li><a href="#" data-loadable="true" data-identifier="activiteiten">Activiteiten</a></li>
-				<li class="hidden-sm"><a href="#" data-loadable="true" data-identifier="magicthegathering">Magic: The Gathering</a></li>
-				<li class="visible-sm"><a href="#" data-loadable="true" data-identifier="magicthegathering">M:TG</a></li>
-				<li><a href="#" data-loadable="true" data-identifier="contact">Contact</a></li>
-				<li><a href="#" data-loadable="true" data-identifier="links">Links</a></li>
+				<li><a href="#aanbiedingen">Aanbiedingen</a></li>
+				<li><a href="#activiteiten">Activiteiten</a></li>
+				<li class="hidden-sm"><a href="#magicthegathering">Magic: The Gathering</a></li>
+				<li class="visible-sm"><a href="#magicthegathering">M:TG</a></li>
+				<li><a href="#contact">Contact</a></li>
+				<li><a href="#links">Links</a></li>
 			</ul>
 		</div>
 	</div>
@@ -63,14 +63,7 @@
 <script src="assets/javascript/content-loading.js"></script>
 <script>
 	document.onreadystatechange = ContentLoading.createReadystatechangeListener ();
-
-	var links = document.querySelectorAll ('a[data-loadable=true]');
-	Array.prototype.forEach.call (links, function (link) {
-		link.onclick = function (event) {
-			ContentLoading.setContent (link.dataset.identifier);
-			event.preventDefault ();
-		}
-	});
+	window.onhashchange = ContentLoading.createNavigationListener ();
 </script>
 
 </body>
