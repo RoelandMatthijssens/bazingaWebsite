@@ -6,15 +6,20 @@ window.ContentLoading = window.ContentLoading || {};
 	var baseUrl = 'content';
 	var extension = '.html';
 
+	var cache = {};
+
 	function identifierToUrl (identifier) {
 		return baseUrl + '/' + identifier + extension;
 	}
 
 	function getContent (identifier, callback) {
+		if ( cache[identifier] ) { return callback (cache[identifier]); }
+
 		var req = new XMLHttpRequest ();
 
 		req.onreadystatechange = function () {
 			if ( req.readyState !== 4 || req.status !== 200 ) { return; }
+			cache[identifier] = req.responseText;
 			callback (req.responseText);
 		}
 
@@ -52,10 +57,20 @@ window.ContentLoading = window.ContentLoading || {};
 		setContent (identifier);
 	}
 
-	function createReadystatechangeListener (prefetch) {
+	function prefetchContent (identifiers) {
+		identifiers.forEach (function (identifier) {
+			getContent (identifier, function () {});
+		});
+	}
+
+	function createReadystatechangeListener (identifiers, current) {
 		return function listener () {
 			if ( document.readyState !== 'interactive' ) { return; }
-			setContentFromHash ();
+
+			if ( ! current ) { setContentFromHash (); }
+			else { setContent (current); }
+
+			prefetchContent (identifiers || []);
 		}
 	};
 

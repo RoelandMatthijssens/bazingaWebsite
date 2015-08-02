@@ -62,7 +62,8 @@
 
 <script src="assets/javascript/content-loading.js"></script>
 <script>
-	document.onreadystatechange = ContentLoading.createReadystatechangeListener ();
+	var identifiers = [ 'aanbiedingen', 'activiteiten', 'contact', 'home', 'kinderspellen', 'links' ];
+	document.onreadystatechange = ContentLoading.createReadystatechangeListener (identifiers);
 	window.onhashchange = ContentLoading.createNavigationListener ();
 </script>
 
