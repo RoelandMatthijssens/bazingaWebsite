@@ -22,10 +22,28 @@ window.ContentLoading = window.ContentLoading || {};
 		req.send ();
 	}
 
+	function reloadJavascript (node) {
+		var scripts = node.querySelectorAll ('script');
+		if ( ! scripts || scripts.length < 1 ) { return; }
+
+		Array.prototype.forEach.call (scripts, function (script) {
+			var nscript = document.createElement ('script');
+			nscript.type = 'text/javascript';
+
+			var content = script.text || script.textContent || script.innerHTML || "";
+			try { nscript.appendChild (document.createTextNode (content)); }
+			catch (e) { nscript.text = content; }
+
+			script.parentNode.removeChild (script);
+			node.appendChild (nscript);
+		});
+	}
+
 	function setContent (identifier) {
 		return getContent (identifier, function (content) {
 			var container = document.querySelector (selector);
 			container.innerHTML = content;
+			reloadJavascript (container);
 		});
 	}
 
