@@ -33,51 +33,25 @@
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
 						 aria-expanded="false">Aanbod <span class="caret"></span></a>
 					<ul class="dropdown-menu">
-						<li><a href="kinderspellen.html">Kinderspellen</a></li>
-						<li><a href="kinderspellen.html">Spellen voor 2</a></li>
-						<li><a href="kinderspellen.html">Familispellen</a></li>
-						<li><a href="kinderspellen.html">Expertspellen</a></li>
-						<li><a href="kinderspellen.html">Fantasy Games</a></li>
+						<li><a href="#" data-loadable="true" data-identifier="kinderspellen">Kinderspellen</a></li>
+						<li><a href="#" data-loadable="true" data-identifier="kinderspellen">Spellen voor 2</a></li>
+						<li><a href="#" data-loadable="true" data-identifier="kinderspellen">Familispellen</a></li>
+						<li><a href="#" data-loadable="true" data-identifier="kinderspellen">Expertspellen</a></li>
+						<li><a href="#" data-loadable="true" data-identifier="kinderspellen">Fantasy Games</a></li>
 					</ul>
 				</li>
-				<li><a href="aanbiedingen.html">Aanbiedingen</a></li>
-				<li><a href="activiteiten.html">Activiteiten</a></li>
-				<li class="hidden-sm"><a href="magicthegathering.html">Magic: The Gathering</a></li>
-				<li class="visible-sm"><a href="magicthegathering.html">M:TG</a></li>
-				<li><a href="contact.html">Contact</a></li>
-				<li><a href="links.html">Links</a></li>
+				<li><a href="#" data-loadable="true" data-identifier="aanbiedingen">Aanbiedingen</a></li>
+				<li><a href="#" data-loadable="true" data-identifier="activiteiten">Activiteiten</a></li>
+				<li class="hidden-sm"><a href="#" data-loadable="true" data-identifier="magicthegathering">Magic: The Gathering</a></li>
+				<li class="visible-sm"><a href="#" data-loadable="true" data-identifier="magicthegathering">M:TG</a></li>
+				<li><a href="#" data-loadable="true" data-identifier="contact">Contact</a></li>
+				<li><a href="#" data-loadable="true" data-identifier="links">Links</a></li>
 			</ul>
 		</div>
 	</div>
 </nav>
 
-<div class="container container-fluid content">
-	<h1>Bazinga!</h1>
-
-	<h2>spellenwinkel</h2>
-
-	<p>Ben je op zoek achter een leuk gezelschapspel om te spelen met de kinderen, familie, vrienden of andere
-		spelliefhebbers, dan ben je bij Bazinga! spellenwinkel aan het juiste adres.</p>
-
-	<p>Wij hebben spellen van onder meer 999 Games, White Goblin Games, Days of Wonder, Asmodee, Selecta Spellen, Queen
-		Games, The Game Master, Fantasy Flight Games en anderen.</p>
-
-	<p>En als je graag wat meer info wil over gezelschapsspellen, dan geven we met plezier tips en advies.</p>
-
-	<p>Trouwe klanten krijgen 10% korting! (voor meer info, vraag ernaar in de winkel)</p>
-
-	<div class="thumbnail col-xs-12 col-sm-6">
-		<img src="assets/images/winkel_spandoek_raam.jpg">
-	</div>
-	<div class="thumbnail col-xs-12 col-sm-6">
-		<img src="assets/images/winkel_spandoek_straat.jpg">
-	</div>
-	<div class="thumbnail col-xs-12 col-sm-6">
-		<img src="assets/images/familiespellen_1.jpg">
-	</div>
-	<div class="thumbnail col-xs-12 col-sm-6">
-		<img src="assets/images/winkel_tafels.jpg">
-	</div>
+<div id="content" class="container container-fluid content">
 </div>
 
 <footer class="footer">
@@ -85,5 +59,19 @@
 		<p class="text-muted pull-right">&copy; Bazinga! 2011-2014</p>
 	</div>
 </footer>
+
+<script src="assets/javascript/content-loading.js"></script>
+<script>
+	document.onreadystatechange = ContentLoading.createReadystatechangeListener ();
+
+	var links = document.querySelectorAll ('a[data-loadable=true]');
+	Array.prototype.forEach.call (links, function (link) {
+		link.onclick = function (event) {
+			ContentLoading.setContent (link.dataset.identifier);
+			event.preventDefault ();
+		}
+	});
+</script>
+
 </body>
 </html>
