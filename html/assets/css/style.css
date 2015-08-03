@@ -67,6 +67,11 @@
     .content .contact-details .fa, .content .contact-details .glyphicon {
       width: 10px;
       margin-right: 5px; }
+  .content .google-map {
+    height: 300px;
+    width: 100%;
+    border: none;
+    margin-top: 10px; }
 
 html {
   position: relative;
