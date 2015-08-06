@@ -4,19 +4,30 @@
   color: $muted-color;
 }
 
-.nav > li.dropdown.active.open > a,
-.nav > li.dropdown.active.open > ul.dropdown-menu a:hover,
 .nav > li.dropdown.open > a,
-.nav > li.dropdown.open > ul.dropdown-menu a:hover {
+.nav > li.dropdown.active.open > a,
+.nav > li.dropdown.open > ul.dropdown-menu a:hover,
+.nav > li.dropdown.active.open > ul.dropdown-menu a:hover {
   background-color: lighten($primary-background-color, 7%);
   color: $primary-foreground-color;
 }
 
 .nav > li.dropdown > a,
-.nav > li.dropdown > ul.dropdown-menu a:hover,
-.dropdown-menu > li > a {
+.nav > li.dropdown > ul.dropdown-menu > li > a,
+.nav > li.dropdown > ul.dropdown-menu > li > a:hover {
   background-color: $primary-background-color;
   color: $primary-foreground-color;
+}
+
+.navbar .nav > li > a {
+  color: $primary-foreground-color;
+}
+
+.navbar .nav > li > a:hover,
+.navbar .nav > li > a:active,
+.navbar .nav > li:not(.dropdown) > a:visited {
+  color: $primary-foreground-color;
+  background-color: lighten($primary-background-color, 7%);
 }
 
 .dropdown-menu > li > a:hover,

@@ -25,18 +25,6 @@
   }
 }
 
-.navbar .nav > li > a {
-  color: $primary-foreground-color;
-  &:hover {
-    color: $primary-foreground-color;
-    background-color: lighten($primary-background-color, 7%);
-  }
-  &:active {
-    color: $primary-foreground-color;
-    background-color: lighten($primary-background-color, 7%);
-  }
-}
-
 @media (max-width: 767px){
   .navbar{
     border-radius: 0 0 0 0;
