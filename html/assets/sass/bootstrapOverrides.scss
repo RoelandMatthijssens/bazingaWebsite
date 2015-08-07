@@ -25,6 +25,7 @@
 
 .navbar .nav > li > a:hover,
 .navbar .nav > li > a:active,
+.navbar .nav > li > a:focus,
 .navbar .nav > li:not(.dropdown) > a:visited {
   color: $primary-foreground-color;
   background-color: lighten($primary-background-color, 7%);

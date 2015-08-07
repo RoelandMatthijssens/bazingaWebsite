@@ -17,8 +17,12 @@
 .navbar .nav > li > a {
   color: #fffff0; }
 
+.navbar .nav > li > a:focus {
+  background-color: red; }
+
 .navbar .nav > li > a:hover,
 .navbar .nav > li > a:active,
+.navbar .nav > li > a:focus,
 .navbar .nav > li:not(.dropdown) > a:visited {
   color: #fffff0;
   background-color: #0a9245; }
