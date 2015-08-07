@@ -1,15 +1,5 @@
 <h1>Bazinga! spellenwinkel</h1>
 
-<div id="fb-root"></div>
-<script>(function (d, s, id) {
-	var js, fjs = d.getElementsByTagName(s)[0];
-	if (d.getElementById(id)) return;
-	js = d.createElement(s);
-	js.id = id;
-	js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4";
-	fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-
 <div class="contact-details col-xs-6 pull-right">
 	<div
 			class="fb-page"
@@ -75,3 +65,27 @@
 		src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2507.185265477673!2d5.418004!3d51.06813!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c12864768dd1dd%3A0x602e9d956c48f310!2sKazernelaan+313%2C+3530+Houthalen-Helchteren!5e0!3m2!1sen!2sbe!4v1438632305380"
 		>
 </iframe>
+
+
+<script>
+	window.fbAsyncInit = function() {
+		FB.init({
+			appId      : '137672319904617',
+			xfbml      : true,
+			version    : 'v2.4'
+		});
+	};
+
+	(function(document, tagName, id){
+		var js;
+		var firstJavaScript = document.getElementsByTagName(tagName)[0];
+		if (document.getElementById(id)) {
+			FB.XFBML.parse();
+			return;
+		}
+		js = document.createElement(tagName);
+		js.id = id;
+		js.src = "//connect.facebook.net/en_US/sdk.js";
+		firstJavaScript.parentNode.insertBefore(js, firstJavaScript);
+	}(document, 'script', 'facebook-jssdk'));
+</script>
