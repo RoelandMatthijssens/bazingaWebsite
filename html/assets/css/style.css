@@ -17,9 +17,6 @@
 .navbar .nav > li > a {
   color: #fffff0; }
 
-.navbar .nav > li > a:focus {
-  background-color: red; }
-
 .navbar .nav > li > a:hover,
 .navbar .nav > li > a:active,
 .navbar .nav > li > a:focus,
@@ -76,6 +73,8 @@
     width: 100%;
     border: none;
     margin-top: 10px; }
+  .content .image-list a > div > img {
+    max-height: 100%; }
 
 html {
   position: relative;
@@ -111,6 +110,14 @@ body {
     font-size: 12px; } }
 @media (min-width: 768px) {
   .content {
-    max-width: calc(100% - 2 * 50px); } }
+    max-width: calc(100% - 2 * 50px); }
+    .content .image-list a > div {
+      height: 281px; } }
+@media (min-width: 992px) {
+  .content .image-list a > div {
+    height: 181px; } }
+@media (min-width: 1200px) {
+  .content .image-list a > div {
+    height: 219px; } }
 
 /*# sourceMappingURL=style.css.map */

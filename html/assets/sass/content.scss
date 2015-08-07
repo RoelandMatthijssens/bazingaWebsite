@@ -22,4 +22,9 @@
     border: none;
     margin-top: 10px;
   }
+  .image-list {
+    a > div > img {
+      max-height: 100%;
+    }
+  }
 }
