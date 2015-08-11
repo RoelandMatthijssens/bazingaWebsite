@@ -52,6 +52,9 @@
   .navbar .logo:hover {
     color: #fffff0; }
 
+.navbar-header a {
+  font-size: 30px; }
+
 @media (max-width: 767px) {
   .navbar {
     border-radius: 0 0 0 0; } }
