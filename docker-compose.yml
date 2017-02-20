@@ -3,6 +3,7 @@ services:
     db:
         image: postgres
     web:
+        container_name: web
         build: .
         command: bin/rails server --port 3000 --bind '0.0.0.0'
         volumes:
