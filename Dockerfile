@@ -1,4 +1,4 @@
-FROM ruby:2.4.0
+FROM ruby:2.3.3
 EXPOSE 3000
 RUN apt-get update -qq && apt-get install -y build-essential libpq-dev nodejs imagemagick
 RUN mkdir /myapp
