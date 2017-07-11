@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170220231543) do
+ActiveRecord::Schema.define(version: 20170705212511) do
 
   create_table "refinery_authentication_devise_roles", force: :cascade do |t|
     t.string "title"
@@ -54,6 +54,28 @@ ActiveRecord::Schema.define(version: 20170220231543) do
 
   add_index "refinery_authentication_devise_users", ["id"], name: "index_refinery_authentication_devise_users_on_id"
   add_index "refinery_authentication_devise_users", ["slug"], name: "index_refinery_authentication_devise_users_on_slug"
+
+  create_table "refinery_image_page_translations", force: :cascade do |t|
+    t.integer  "refinery_image_page_id", null: false
+    t.string   "locale",                 null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.text     "caption"
+  end
+
+  add_index "refinery_image_page_translations", ["locale"], name: "index_refinery_image_page_translations_on_locale"
+  add_index "refinery_image_page_translations", ["refinery_image_page_id"], name: "index_186c9a170a0ab319c675aa80880ce155d8f47244"
+
+  create_table "refinery_image_pages", force: :cascade do |t|
+    t.integer "image_id"
+    t.integer "page_id"
+    t.integer "position"
+    t.text    "caption"
+    t.string  "page_type", default: "page"
+  end
+
+  add_index "refinery_image_pages", ["image_id"], name: "index_refinery_image_pages_on_image_id"
+  add_index "refinery_image_pages", ["page_id"], name: "index_refinery_image_pages_on_page_id"
 
   create_table "refinery_image_translations", force: :cascade do |t|
     t.integer  "refinery_image_id", null: false
@@ -143,6 +165,113 @@ ActiveRecord::Schema.define(version: 20170220231543) do
   add_index "refinery_pages", ["lft"], name: "index_refinery_pages_on_lft"
   add_index "refinery_pages", ["parent_id"], name: "index_refinery_pages_on_parent_id"
   add_index "refinery_pages", ["rgt"], name: "index_refinery_pages_on_rgt"
+
+  create_table "refinery_product_translations", force: :cascade do |t|
+    t.integer  "refinery_product_id", null: false
+    t.string   "locale",              null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.text     "body"
+    t.string   "slug"
+    t.string   "title"
+  end
+
+  add_index "refinery_product_translations", ["locale"], name: "index_refinery_product_translations_on_locale"
+  add_index "refinery_product_translations", ["refinery_product_id"], name: "index_refinery_product_translations_on_refinery_product_id"
+
+  create_table "refinery_products", force: :cascade do |t|
+    t.string   "title"
+    t.text     "body"
+    t.boolean  "draft",        default: true
+    t.datetime "published_at"
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "slug"
+    t.integer  "file_id"
+    t.string   "sku"
+  end
+
+  add_index "refinery_products", ["file_id"], name: "index_refinery_products_on_file_id"
+  add_index "refinery_products", ["id"], name: "index_refinery_products_on_id"
+  add_index "refinery_products", ["slug"], name: "index_refinery_products_on_slug"
+
+  create_table "refinery_products_categories", force: :cascade do |t|
+    t.string   "title"
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "slug"
+    t.integer  "parent_id"
+    t.integer  "lft"
+    t.integer  "rgt"
+    t.integer  "depth"
+    t.integer  "promote"
+    t.integer  "photo_id"
+    t.text     "body"
+  end
+
+  add_index "refinery_products_categories", ["id"], name: "index_refinery_products_categories_on_id"
+  add_index "refinery_products_categories", ["slug"], name: "index_refinery_products_categories_on_slug"
+
+  create_table "refinery_products_categories_products", force: :cascade do |t|
+    t.integer "products_category_id"
+    t.integer "product_id"
+  end
+
+  add_index "refinery_products_categories_products", ["products_category_id", "product_id"], name: "index_products_categories_products_on_pc_and_p"
+
+  create_table "refinery_products_category_translations", force: :cascade do |t|
+    t.integer  "refinery_products_category_id", null: false
+    t.string   "locale",                        null: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+    t.string   "slug"
+    t.string   "title"
+    t.text     "body"
+  end
+
+  add_index "refinery_products_category_translations", ["locale"], name: "index_refinery_products_category_translations_on_locale"
+  add_index "refinery_products_category_translations", ["refinery_products_category_id"], name: "index_995c7eec70348a18da3f67baf581eaf80ed0f31b"
+
+  create_table "refinery_products_properties", force: :cascade do |t|
+    t.string   "title"
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "refinery_products_properties", ["id"], name: "index_refinery_products_properties_on_id"
+
+  create_table "refinery_products_properties_product_translations", force: :cascade do |t|
+    t.integer  "refinery_products_properties_product_id", null: false
+    t.string   "locale",                                  null: false
+    t.datetime "created_at",                              null: false
+    t.datetime "updated_at",                              null: false
+    t.string   "value"
+  end
+
+  add_index "refinery_products_properties_product_translations", ["locale"], name: "index_590bac9f6b7005d36aa6717481924e0c3a072d8f"
+  add_index "refinery_products_properties_product_translations", ["refinery_products_properties_product_id"], name: "index_912fb836d087c5d1b3f2e5c7f02ed7dc3683f6ac"
+
+  create_table "refinery_products_properties_products", force: :cascade do |t|
+    t.integer "products_property_id"
+    t.integer "product_id"
+    t.text    "value"
+  end
+
+  add_index "refinery_products_properties_products", ["products_property_id", "product_id"], name: "index_products_properties_products_on_pp_and_p", unique: true
+
+  create_table "refinery_products_property_translations", force: :cascade do |t|
+    t.integer  "refinery_products_property_id", null: false
+    t.string   "locale",                        null: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+    t.string   "title"
+  end
+
+  add_index "refinery_products_property_translations", ["locale"], name: "index_refinery_products_property_translations_on_locale"
+  add_index "refinery_products_property_translations", ["refinery_products_property_id"], name: "index_4c979172aea997b9ed4633b3ddc58bbf542f5ec6"
 
   create_table "refinery_resource_translations", force: :cascade do |t|
     t.integer  "refinery_resource_id", null: false

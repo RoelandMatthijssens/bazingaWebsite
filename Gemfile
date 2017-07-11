@@ -16,6 +16,8 @@ gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
+gem "haml-rails", "~> 0.9"
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
@@ -50,6 +52,7 @@ end
 
 # Refinery CMS
 gem 'refinerycms', '~> 3.0'
+gem 'refinerycms-products', github: 'bisscomm/refinerycms-products', branch: 'master'
 
 # Optionally, specify additional Refinery CMS Extensions here:
 gem 'refinerycms-acts-as-indexed', ['~> 2.0', '>= 2.0.1']
@@ -58,4 +61,4 @@ gem 'refinerycms-authentication-devise', '~> 1.0'
 #  gem 'refinerycms-blog', ['~> 3.0', '>= 3.0.0']
 #  gem 'refinerycms-inquiries', ['~> 3.0', '>= 3.0.0']
 #  gem 'refinerycms-search', ['~> 3.0', '>= 3.0.0']
-#  gem 'refinerycms-page-images', ['~> 3.0', '>= 3.0.0']
+gem "refinerycms-page-images", github: "refinery/refinerycms-page-images", branch: "master"

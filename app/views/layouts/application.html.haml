@@ -1,0 +1,52 @@
+!!!
+%nav.navbar
+    .container.container-fluid
+    .navbar-default
+        %button.navbar-toggle.collapsed{"aria-expanded" => "false", "data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
+        %span.sr-only Toggle navigation
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+    .navbar-header
+        %a.navbar-brand.logo{:href => "#home"}
+        %img{:alt => "Brand", :src => "assets/images/logo.jpg"}/
+        Bazinga!
+    #bs-example-navbar-collapse-1.collapse.navbar-collapse
+        %ul.nav.navbar-nav.navbar-right
+        %li.dropdown
+            %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "", :role => "button"}
+            Aanbod
+            %span.caret
+            %ul.dropdown-menu
+            %li
+                %a{:href => "#kinderspellen"} Kinderspellen
+            %li
+                %a{:href => "#spellenvoor2"} Spellen voor 2
+            %li
+                %a{:href => "#familiespellen"} Familispellen
+            %li
+                %a{:href => "#expertspellen"} Expertspellen
+            %li
+                %a{:href => "#fantasiespellen"} Fantasy Games
+        %li
+            %a{:href => "#aanbiedingen"} Aanbiedingen
+        %li
+            %a{:href => "#activiteiten"} Activiteiten
+        %li.hidden-sm
+            %a{:href => "#magicthegathering"} Magic: The Gathering
+        %li.visible-sm
+            %a{:href => "#magicthegathering"} MTG
+        %li
+            %a{:href => "#contact"} Contact
+        %li
+            %a{:href => "#links"} Links
+#content.container.container-fluid.content
+%footer.footer
+    .container.container-fluid.footer-content
+    %p.text-muted.pull-right © Bazinga! spellenwinkel 2011-2014
+%script{:src => "assets/javascript/content-loading.js"}
+:javascript
+    var identifiers = [ 'aanbiedingen', 'activiteiten', 'contact', 'home', 'kinderspellen', 'links' ];
+    document.onreadystatechange = ContentLoading.createReadystatechangeListener (identifiers);
+    window.onhashchange = ContentLoading.createNavigationListener ();
+
